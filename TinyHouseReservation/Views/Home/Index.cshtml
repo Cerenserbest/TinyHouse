@@ -1,0 +1,78 @@
+﻿@{
+    ViewData["Title"] = "Tiny House Rezervasyon Sistemi";
+}
+
+@if (TempData["Mesaj"] != null)
+{
+    <div class="alert alert-success text-center mt-3">
+        @TempData["Mesaj"]
+    </div>
+}
+
+<style>
+    body {
+        background-color: #fefefc;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .intro-section {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 90vh;
+        padding: 0 5%;
+        flex-wrap: wrap;
+    }
+
+    .intro-text {
+        max-width: 40%;
+    }
+
+        .intro-text h1 {
+            color: #4CAF50;
+            font-size: 2rem;
+            margin-bottom: 30px;
+        }
+
+    .intro-buttons a {
+        display: inline-block;
+        font-size: 1.2rem;
+        padding: 12px 25px;
+        margin: 10px 8px;
+        border-radius: 8px;
+        text-decoration: none;
+    }
+
+    .btn-green {
+        background-color: #ffc107;
+        color: black;
+        font-weight: bold;
+        border: none;
+    }
+
+    .btn-black {
+        background-color: black;
+        color: white;
+        font-weight: bold;
+        border: none;
+    }
+
+    .intro-logo img {
+        max-width: 350px;
+        height: auto;
+    }
+</style>
+
+<div class="intro-section">
+    <div class="intro-text">
+        <h1>Tiny House Rezervasyon Sistemine Hoş Geldiniz.</h1>
+        <div class="intro-buttons">
+            <a href="/Kullanici/Giris" class="btn-green">giriş yap</a>
+            <a href="/Kullanici/Ekle" class="btn-black">kayıt ol</a>
+        </div>
+    </div>
+    <div class="intro-logo">
+        <img src="/images/tiny-logo.png" alt="Tiny House Logo">
+    </div>
+</div>
+

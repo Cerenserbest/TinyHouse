@@ -1,0 +1,32 @@
+﻿@model List<TinyHouseReservations.Models.Kullanici>
+
+@{
+    ViewData["Title"] = "Kullanıcı Listesi";
+}
+
+<h2>Kullanıcı Listesi</h2>
+
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Ad</th>
+            <th>Soyad</th>
+            <th>Email</th>
+            <th>Rol ID</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var k in Model)
+        {
+            <tr>
+                <td>@k.KullaniciID</td>
+                <td>@k.Ad</td>
+                <td>@k.Soyad</td>
+                <td>@k.Email</td>
+                <td>@k.RolID</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
