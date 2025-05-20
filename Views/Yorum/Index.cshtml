@@ -1,0 +1,38 @@
+﻿@model List<TinyHouseReservations.Models.YorumDetay>
+
+@{
+    ViewData["Title"] = "Yorumlar ve Puanlar";
+}
+
+<h2>💬 Yorumlar</h2>
+
+@if (!Model.Any())
+{
+    <p class="text-muted">Henüz yorum bulunmamaktadır.</p>
+}
+else
+{
+    <table class="table table-bordered table-hover">
+        <thead class="thead-light">
+            <tr>
+                <th>Ev</th>
+                <th>Kiracı</th>
+                <th>Puan</th>
+                <th>Yorum</th>
+                <th>Tarih</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var y in Model)
+            {
+                <tr>
+                    <td>@y.EvBaslik</td>
+                    <td>@y.KiraciAdSoyad</td>
+                    <td>@y.Puan / 5</td>
+                    <td>@y.YorumMetni</td>
+                    <td>@y.YorumTarihi.ToShortDateString()</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

@@ -1,0 +1,32 @@
+﻿@model List<TinyHouseReservations.Models.OdemeDetay>
+
+<h2>💰 Ödeme Geçmişi</h2>
+
+@if (!Model.Any())
+{
+    <p class="text-muted">Henüz ödeme yapılmamış.</p>
+}
+else
+{
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Ev</th>
+                <th>Tutar (₺)</th>
+                <th>Tarih</th>
+                <th>Ödeme Tipi</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var o in Model)
+            {
+                <tr>
+                    <td>@o.EvBaslik</td>
+                    <td>@o.Tutar</td>
+                    <td>@o.OdemeTarihi.ToShortDateString()</td>
+                    <td>@o.OdemeTipi</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

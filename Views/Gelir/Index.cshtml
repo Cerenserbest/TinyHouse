@@ -1,0 +1,56 @@
+﻿@model List<TinyHouseReservations.Models.GelirDetay>
+
+@{
+    ViewData["Title"] = "Gelir Raporu";
+    var labels = string.Join(",", Model.Select(x => $"'{x.EvBaslik}'"));
+    var data = string.Join(",", Model.Select(x => x.ToplamGelir));
+}
+
+<h2>💸 Gelir Raporu</h2>
+
+<canvas id="gelirChart" width="400" height="200"></canvas>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    var ctx = document.getElementById('gelirChart').getContext('2d');
+    var gelirChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: [@Html.Raw(labels)],
+            datasets: [{
+                label: 'Toplam Gelir (₺)',
+                data: [@Html.Raw(data)],
+                borderWidth: 1,
+                backgroundColor: 'rgba(54, 162, 235, 0.5)'
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+</script>
+
+<hr>
+
+<h4>🔍 Detaylı Gelir Listesi</h4>
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>Ev Başlığı</th>
+            <th>Toplam Gelir (₺)</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.EvBaslik</td>
+                <td>@item.ToplamGelir</td>
+            </tr>
+        }
+    </tbody>
+</table>

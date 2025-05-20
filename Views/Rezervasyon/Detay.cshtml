@@ -1,0 +1,36 @@
+﻿@model TinyHouseReservations.Models.RezervasyonDetay
+
+<h2>Rezervasyon Detayı</h2>
+
+<table class="table table-striped">
+    <tr>
+        <th>Rezervasyon ID</th>
+        <td>@Model.RezervasyonID</td>
+    </tr>
+    <tr>
+        <th>Ev</th>
+        <td>@Model.EvBaslik</td>
+    </tr>
+    <tr>
+        <th>Kiracı</th>
+        <td>@Model.KiraciAdSoyad</td>
+    </tr>
+    <tr>
+        <th>Başlangıç</th>
+        <td>@Model.Baslangic.ToShortDateString()</td>
+    </tr>
+    <tr>
+        <th>Bitiş</th>
+        <td>@Model.Bitis.ToShortDateString()</td>
+    </tr>
+    <tr>
+        <th>Durum</th>
+        <td>@Model.Durum</td>
+    </tr>
+    <tr>
+        <th>Ödeme</th>
+        <td>@(Model.OdemeDurumu ? "Ödendi" : "Bekliyor")</td>
+    </tr>
+</table>
+
+<a href="/Rezervasyon/Index" class="btn btn-outline-secondary">← Geri Dön</a>

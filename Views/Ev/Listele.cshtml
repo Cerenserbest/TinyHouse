@@ -1,0 +1,49 @@
+﻿@model List<TinyHouseReservations.Models.Ev>
+
+<h2>İlanlarım</h2>
+@if (TempData["SilmeHatasi"] != null)
+{
+    <div class="alert alert-danger">
+        @TempData["SilmeHatasi"]
+    </div>
+}
+
+
+<table class="table table-bordered table-hover">
+    <thead class="thead-dark">
+        <tr>
+            <th>Başlık</th>
+            <th>Fiyat (₺)</th>
+            <th>Konum</th>
+            <th>Durum</th>
+            <th>İşlem</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var ev in Model)
+        {
+            <tr>
+                <td>@ev.Baslik</td>
+                <td>@ev.Fiyat</td>
+                <td>@ev.Konum</td>
+                <td>@(ev.Durum ? "Aktif" : "Pasif")</td>
+                <td>
+                    <a class="btn btn-sm btn-warning" href="/Ev/Duzenle/@ev.EvID">Düzenle</a>
+                    <a class="btn btn-sm btn-danger" href="/Ev/Sil/@ev.EvID">Sil</a>
+
+                    @if (ev.Durum)
+                    {
+                        <a href="/Ev/DurumDegistir/@ev.EvID?aktifMi=false" class="btn btn-sm btn-outline-secondary">Pasife Al</a>
+                    }
+                    else
+                    {
+                        <a href="/Ev/DurumDegistir/@ev.EvID?aktifMi=true" class="btn btn-sm btn-outline-success">Aktife Al</a>
+                    }
+                </td>
+
+            </tr>
+
+        }
+
+    </tbody>
+</table>

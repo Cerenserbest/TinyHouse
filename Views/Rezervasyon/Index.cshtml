@@ -1,0 +1,45 @@
+﻿@model List<TinyHouseReservations.Models.RezervasyonDetay>
+
+<h2>Rezervasyon Talepleri</h2>
+
+<table class="table table-bordered table-striped">
+    <thead class="thead-dark">
+        <tr>
+            <th>Ev</th>
+            <th>Kiracı</th>
+            <th>Başlangıç</th>
+            <th>Bitiş</th>
+            <th>Durum</th>
+            <th>Ödeme</th>
+            <th>İşlem</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var r in Model)
+        {
+            <tr>
+                <td>@r.EvBaslik</td>
+                <td>@r.KiraciAdSoyad</td>
+                <td>@r.Baslangic.ToShortDateString()</td>
+                <td>@r.Bitis.ToShortDateString()</td>
+                <td>@r.Durum</td>
+                <td>@(r.OdemeDurumu ? "Ödendi" : "Bekliyor")</td>
+                <td>
+                    @if (r.Durum == "Beklemede")
+                    {
+                        <a href="/Rezervasyon/KabulEt/@r.RezervasyonID" class="btn btn-sm btn-success">Kabul Et</a>
+                        <a href="/Rezervasyon/Reddet/@r.RezervasyonID" class="btn btn-sm btn-danger">Reddet</a>
+                    }
+                    else
+                    {
+                        <span>-</span>
+                    }
+
+  
+                    <a href="/Rezervasyon/Detay/@r.RezervasyonID" class="btn btn-sm btn-outline-dark ms-1">Detay</a>
+                </td>
+            </tr>
+        }
+
+    </tbody>
+</table>

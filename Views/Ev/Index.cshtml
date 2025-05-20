@@ -1,0 +1,115 @@
+﻿@model TinyHouseReservations.Models.EvDashboardViewModel
+
+@section Styles {
+    <style>
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        @@keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hover-grow:hover {
+            transform: scale(1.05);
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+        }
+
+        .dashboard-card {
+            border-radius: 1.2rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .bg-gradient-blue {
+            background: linear-gradient(to right, #4facfe, #00f2fe);
+            color: white;
+        }
+
+        .bg-gradient-yellow {
+            background: linear-gradient(to right, #f9d423, #ff4e50);
+            color: white;
+        }
+
+        .bg-gradient-green {
+            background: linear-gradient(to right, #11998e, #38ef7d);
+            color: white;
+        }
+
+        .custom-btn {
+            min-width: 180px;
+            border-radius: 0.6rem;
+        }
+
+            .custom-btn:hover {
+                opacity: 0.9;
+                transform: translateY(-2px);
+                transition: 0.2s ease-in-out;
+            }
+    </style>
+}
+
+<h2 class="mb-4"><i class="bi bi-house-door-fill text-primary"></i> Ev Sahibi Paneli</h2>
+
+<div class="row g-4">
+    <div class="col-md-4 fade-in-up">
+        <div class="card dashboard-card hover-grow shadow bg-gradient-blue border-0">
+            <div class="card-body">
+                <h5 class="card-title fw-bold"><i class="bi bi-house-fill me-2"></i>Toplam İlan</h5>
+                <h2>@Model.ToplamEv</h2>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 fade-in-up">
+        <div class="card dashboard-card hover-grow shadow bg-gradient-yellow border-0">
+            <div class="card-body">
+                <h5 class="card-title fw-bold"><i class="bi bi-calendar-check-fill me-2"></i>Rezervasyonlar</h5>
+                <h2>@Model.ToplamRezervasyon</h2>
+                <p class="mb-2">Bekleyen: <strong>@Model.BekleyenRezervasyon</strong></p>
+                <a href="/Rezervasyon/Index" class="btn btn-light btn-sm mt-2">📅 Talepleri Gör</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 fade-in-up">
+        <div class="card dashboard-card hover-grow shadow bg-gradient-green border-0">
+            <div class="card-body">
+                <h5 class="card-title fw-bold"><i class="bi bi-cash-coin me-2"></i>Toplam Gelir</h5>
+                <h2>@Model.ToplamGelir ₺</h2>
+            </div>
+        </div>
+    </div>
+</div>
+
+<hr class="my-4" />
+
+<h4 class="mb-3"><i class="bi bi-chat-dots-fill"></i> Son Yorumlar</h4>
+@if (Model.SonYorumlar.Count == 0)
+{
+    <div class="alert alert-info d-flex align-items-center" role="alert">
+        <i class="bi bi-info-circle-fill me-2"></i>
+        Henüz yorum bulunmamaktadır.
+    </div>
+}
+else
+{
+    <ul class="list-group mb-4">
+        @foreach (var yorum in Model.SonYorumlar)
+        {
+            <li class="list-group-item"><i class="bi bi-chat-left-quote me-2 text-secondary"></i> @yorum</li>
+        }
+    </ul>
+}
+
+<div class="d-flex flex-wrap gap-2 mt-4">
+    <a href="/Ev/Listele" class="btn btn-outline-primary custom-btn"><i class="bi bi-card-list"></i> İlanlarımı Yönet</a>
+    <a href="/Ev/Ekle" class="btn btn-outline-success custom-btn"><i class="bi bi-plus-circle"></i> Yeni İlan Ekle</a>
+    <a href="/Yorum/Index" class="btn btn-outline-info custom-btn"><i class="bi bi-chat-text"></i> Yorumları Gör</a>
+    <a href="/Rezervasyon/Index" class="btn btn-outline-info custom-btn"><i class="bi bi-calendar-event"></i> Rezervasyonları Gör</a>
+    <a href="/Odeme/Index" class="btn btn-outline-warning custom-btn"><i class="bi bi-wallet2"></i> Ödeme Geçmişi</a>
+    <a href="/Gelir/Index" class="btn btn-outline-dark custom-btn"><i class="bi bi-bar-chart-fill"></i> Gelir Raporu</a>
+</div>

@@ -1,0 +1,99 @@
+is_global = true
+build_property.TargetFramework = net8.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = TinyHouseReservation
+build_property.RootNamespace = TinyHouseReservation
+build_property.ProjectDir = C:\Users\ceren\source\repos\TinyHouseReservation\TinyHouseReservation\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 8.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\ceren\source\repos\TinyHouseReservation\TinyHouseReservation
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/ceren/source/repos/TinyHouseReservation/TinyHouseReservation/Views/Admin/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ceren/source/repos/TinyHouseReservation/TinyHouseReservation/Views/Ev/Duzenle.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXZcRHV6ZW5sZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ceren/source/repos/TinyHouseReservation/TinyHouseReservation/Views/Ev/Ekle.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXZcRWtsZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ceren/source/repos/TinyHouseReservation/TinyHouseReservation/Views/Ev/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXZcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ceren/source/repos/TinyHouseReservation/TinyHouseReservation/Views/Ev/Listele.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXZcTGlzdGVsZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ceren/source/repos/TinyHouseReservation/TinyHouseReservation/Views/Gelir/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2VsaXJcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ceren/source/repos/TinyHouseReservation/TinyHouseReservation/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ceren/source/repos/TinyHouseReservation/TinyHouseReservation/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ceren/source/repos/TinyHouseReservation/TinyHouseReservation/Views/Kullanici/Ekle.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS3VsbGFuaWNpXEVrbGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ceren/source/repos/TinyHouseReservation/TinyHouseReservation/Views/Kullanici/Giris.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS3VsbGFuaWNpXEdpcmlzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ceren/source/repos/TinyHouseReservation/TinyHouseReservation/Views/Kullanici/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS3VsbGFuaWNpXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ceren/source/repos/TinyHouseReservation/TinyHouseReservation/Views/Odeme/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT2RlbWVcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ceren/source/repos/TinyHouseReservation/TinyHouseReservation/Views/Rezervasyon/Detay.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmV6ZXJ2YXN5b25cRGV0YXkuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ceren/source/repos/TinyHouseReservation/TinyHouseReservation/Views/Rezervasyon/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmV6ZXJ2YXN5b25cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ceren/source/repos/TinyHouseReservation/TinyHouseReservation/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ceren/source/repos/TinyHouseReservation/TinyHouseReservation/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ceren/source/repos/TinyHouseReservation/TinyHouseReservation/Views/Yorum/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcWW9ydW1cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ceren/source/repos/TinyHouseReservation/TinyHouseReservation/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ceren/source/repos/TinyHouseReservation/TinyHouseReservation/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ceren/source/repos/TinyHouseReservation/TinyHouseReservation/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-l5sf02tunm
