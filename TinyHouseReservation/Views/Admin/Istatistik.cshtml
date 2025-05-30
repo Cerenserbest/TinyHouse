@@ -1,0 +1,93 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model dynamic
+
+@{
+    ViewData["Title"] = "İstatistikler";
+}
+
+<h2>İstatistikler</h2>
+
+<div class="row">
+    <div class="col-md-4">
+        <div class="card bg-light p-3 mb-3">
+            <h5>Toplam Kullanıcı</h5>
+            <p>@Model.ToplamKullanici</p>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card bg-light p-3 mb-3">
+            <h5>Aktif Kullanıcı</h5>
+            <p>@Model.AktifKullanici</p>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card bg-light p-3 mb-3">
+            <h5>Yeni Kayıtlı Kullanıcı (Son 7 Gün)</h5>
+            <p>@Model.YeniKullanici</p>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <div class="card bg-light p-3 mb-3">
+            <h5>Toplam Rezervasyon</h5>
+            <p>@Model.ToplamRezervasyon</p>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card bg-light p-3 mb-3">
+            <h5>Bugünkü Rezervasyon</h5>
+            <p>@Model.BugunRezervasyon</p>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card bg-light p-3 mb-3">
+            <h5>Toplam Ödeme Sayısı</h5>
+            <p>@Model.ToplamOdeme</p>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <div class="card bg-success text-white p-3 mb-3">
+            <h5>Toplam Ödeme Tutarı (₺)</h5>
+            <p>@Model.ToplamTutar</p>
+        </div>
+    </div>
+</div>
+<canvas id="chart1" width="600" height="300"></canvas>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    fetch("/Admin/AylikGrafikVerileri")
+        .then(res => res.json())
+        .then(data => {
+            const ctx = document.getElementById("chart1").getContext("2d");
+            new Chart(ctx, {
+                type: "line",
+                data: {
+                    labels: data.aylar,
+                    datasets: [
+                        {
+                            label: "Rezervasyon",
+                            data: data.rezervasyonSayilari,
+                            borderColor: "blue",
+                            fill: false
+                        },
+                        {
+                            label: "Ödeme (₺)",
+                            data: data.odemeToplamlari,
+                            borderColor: "green",
+                            fill: false
+                        }
+                    ]
+                }
+            });
+        });
+</script>

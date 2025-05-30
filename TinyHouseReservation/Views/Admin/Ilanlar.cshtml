@@ -1,0 +1,51 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model List<TinyHouseReservations.Models.Ev>
+
+@{
+    ViewBag.Title = "İlanlar Listesi";
+}
+
+<h2>İlanlar</h2>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Başlık</th>
+            <th>Açıklama</th>
+            <th>Konum</th>
+            <th>Fiyat</th>
+            <th>Durum</th>
+            <th>İşlemler</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var ev in Model)
+        {
+            <tr>
+                <td>
+                    <a href="/Admin/EvDuzenle/@ev.EvID" class="btn btn-sm btn-warning">Düzenle</a>
+                    <a href="/Admin/EvSil/@ev.EvID" class="btn btn-sm btn-danger" onclick="return confirm('İlanı silmek istediğinize emin misiniz?');">Sil</a>
+                </td>
+
+                <td>@ev.Baslik</td>
+                <td>@ev.Aciklama</td>
+                <td>@ev.Konum</td>
+                <td>@ev.Fiyat ₺</td>
+                <td>
+                    @if (ev.Durum)
+                    {
+                        <span class="text-success">Aktif</span>
+                    }
+                    else
+                    {
+                        <span class="text-danger">Pasif</span>
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+

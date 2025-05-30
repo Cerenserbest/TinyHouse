@@ -1,8 +1,30 @@
 ﻿@{
-    ViewData["Title"] = "Ev Sahibi Paneli";
+    ViewData["Title"] = "Kullanıcı Listesi";
 }
 
-<h2>Ev Sahibi Paneline Hoş Geldiniz</h2>
-<p>Bu sayfa ev sahibi kullanıcılar içindir.</p>
+<h2>@ViewData["Title"]</h2>
+<p>Bu sayfa kullanıcıları listelemektedir.</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Ad</th>
+            <th>Soyad</th>
+            <th>Email</th>
+            <th>Rol</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var kullanici in Model)
+        {
+            <tr>
+                <td>@kullanici.Ad</td>
+                <td>@kullanici.Soyad</td>
+                <td>@kullanici.Email</td>
+                <td>@kullanici.RolID</td> <!-- Burada kullanıcının rolünü de gösterebilirsiniz -->
+            </tr>
+        }
+    </tbody>
+</table>
 
 

@@ -1,0 +1,56 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@@model TinyHouseReservations.Models.Rezervasyon
+
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    ViewData["Title"] = "Rezervasyon Detayı";
+}
+
+<h2>Rezervasyon Detayı</h2>
+
+<table class="table table-bordered">
+    <tr>
+        <th>Rezervasyon ID</th>
+        <td>@Model.RezervasyonID</td>
+    </tr>
+    <tr>
+        <th>Ev Başlığı</th>
+        <td>@Model.EvBaslik</td>
+    </tr>
+    <tr>
+        <th>Konum</th>
+        <td>@Model.Konum</td>
+    </tr>
+    <tr>
+        <th>Kullanıcı Adı</th>
+        <td>@Model.KullaniciAd</td>
+    </tr>
+    <tr>
+        <th>Ev ID</th>
+        <td>@Model.EvID</td>
+    </tr>
+    <tr>
+        <th>Kullanıcı ID</th>
+        <td>@Model.KullaniciID</td>
+    </tr>
+    <tr>
+        <th>Başlangıç Tarihi</th>
+        <td>@Model.BaslangicTarihi.ToShortDateString()</td>
+    </tr>
+    <tr>
+        <th>Bitiş Tarihi</th>
+        <td>@Model.BitisTarihi.ToShortDateString()</td>
+    </tr>
+    <tr>
+        <th>Ödeme Durumu</th>
+        <td>@Model.OdemeDurumu</td>
+    </tr>
+    <tr>
+        <th>Durum</th>
+        <td>@(Model.Durum ? "Aktif" : "İptal")</td>
+    </tr>
+</table>

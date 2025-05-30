@@ -1,4 +1,7 @@
-﻿@model List<TinyHouseReservations.Models.Kullanici>
+﻿@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+@model List<TinyHouseReservations.Models.Kullanici>
 
 <h2>Kullanıcı Listesi</h2>
 <table class="table">
@@ -8,7 +11,12 @@
             <th>Soyad</th>
             <th>Email</th>
             <th>Rol</th>
+            <th>İşlem</th>
+            <th>Sil</th>
+
+
         </tr>
+
     </thead>
     <tbody>
         @foreach (var k in Model)
@@ -18,6 +26,16 @@
                 <td>@k.Soyad</td>
                 <td>@k.Email</td>
                 <td>@k.RolID</td>
+                <td>@(k.Durum ? "Aktif" : "Pasif")</td>
+
+                <td>
+                    <a href="/Admin/KullaniciDuzenle/@k.KullaniciID" class="btn btn-sm btn-warning">Düzenle</a>
+                    <a href="/Admin/KullaniciSil/@k.KullaniciID" class="btn btn-sm btn-danger" onclick="return confirm('Bu kullanıcıyı silmek istediğinize emin misiniz?')">Sil</a>
+                    <a href="/Admin/KullaniciDurumDegistir/@k.KullaniciID" class="btn btn-sm btn-secondary">
+                        @(k.Durum ? "Pasif Yap" : "Aktif Yap")
+                    </a>
+                </td>
+
             </tr>
         }
     </tbody>

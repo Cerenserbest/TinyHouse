@@ -1,0 +1,59 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@@model List<TinyHouseReservations.Models.Rezervasyon>
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Rezervasyon Listesi</h2>
+    <div class="mb-3">
+        <a href="/Admin/Rezervasyonlar?durum=aktif" class="btn btn-outline-success me-2">Aktif Rezervasyonlar</a>
+        <a href="/Admin/Rezervasyonlar?durum=iptal" class="btn btn-outline-danger">İptal Edilenler</a>
+    </div>
+
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Rezervasyon ID</th>
+            <th>Kullanıcı</th>
+            <th>Ev</th>
+            <th>Başlangıç Tarihi</th>
+            <th>Bitiş Tarihi</th>
+            <th>Durum</th>
+                <th>İşlem</th>
+                <th>Detay</th>
+
+
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var r in Model)
+        {
+            <tr>
+                <td>@r.RezervasyonID</td>
+                    <td>@r.KullaniciAd</td>
+                    <td>@r.EvBaslik</td>
+
+                <td>@r.BaslangicTarihi.ToShortDateString()</td>
+                    <td>
+                        <a href="/Admin/RezervasyonDetay/@r.RezervasyonID" class="btn btn-sm btn-info">Detay</a>
+                    </td>
+
+                <td>@r.BitisTarihi.ToShortDateString()</td>
+                    <td>@(r.Durum ? "Onaylı" : "Beklemede")</td>
+                    <td>
+                        <form asp-action="RezervasyonIptal" method="post">
+                            <input type="hidden" name="id" value="@r.RezervasyonID" />
+                            <button type="submit" class="btn btn-sm btn-danger">İptal Et</button>
+                        </form>
+                    </td>
+
+
+            </tr>
+        }
+    </tbody>
+</table>
+

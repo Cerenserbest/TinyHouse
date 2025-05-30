@@ -1,0 +1,27 @@
+﻿@model List<TinyHouseReservations.Models.Odeme>
+
+<h2>Ödeme Raporları</h2>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Kullanıcı ID</th>
+            <th>Tutar</th>
+            <th>Tarih</th>
+            <th>Ödeme Tipi</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var odeme in Model)
+        {
+            <tr>
+                <td>@odeme.OdemeID</td>
+                <td>@odeme.KullaniciID</td>
+                <td>@odeme.Tutar ₺</td>
+                <td>@odeme.Tarih.ToShortDateString()</td>
+                <td>@odeme.OdemeTipi</td>
+            </tr>
+        }
+    </tbody>
+</table>

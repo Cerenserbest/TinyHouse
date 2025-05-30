@@ -1,0 +1,114 @@
+﻿@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Admin Dashboard</h2>
+
+<div class="row">
+
+    <!-- Kullanıcılar -->
+    <div class="col-md-3">
+        <a href="/Admin/KullanicilariListele" style="text-decoration:none">
+            <div class="card bg-primary text-white mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">Toplam Kullanıcı</h5>
+                    <p class="card-text">@ViewBag.Toplam</p>
+                </div>
+            </div>
+        </a>
+    </div>
+
+    <div class="col-md-3">
+        <a href="/Admin/KullanicilariListele?durum=aktif" style="text-decoration:none">
+            <div class="card bg-success text-white mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">Aktif Kullanıcı</h5>
+                    <p class="card-text">@ViewBag.Aktif</p>
+                </div>
+            </div>
+        </a>
+    </div>
+
+
+    <div class="col-md-3">
+        <a href="/Admin/KullanicilariListele?durum=pasif" style="text-decoration:none">
+            <div class="card bg-danger text-white mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">Pasif Kullanıcı</h5>
+                    <p class="card-text">@ViewBag.Pasif</p>
+                </div>
+            </div>
+        </a>
+    </div>
+
+    <div class="col-md-3">
+        <a href="/Admin/KullanicilariListele?rol=admin" style="text-decoration:none">
+            <div class="card bg-warning text-dark mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">Admin Sayısı</h5>
+                    <p class="card-text">@ViewBag.Admin</p>
+                </div>
+            </div>
+        </a>
+    </div>
+
+    <!-- Evler -->
+    <div class="col-md-3">
+        <a href="/Admin/EvleriListele" style="text-decoration:none">
+            <div class="card bg-info text-white mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">Toplam Ev</h5>
+                    <p class="card-text">@ViewBag.ToplamEv</p>
+                </div>
+            </div>
+        </a>
+    </div>
+
+    <div class="col-md-3">
+        <a href="/Admin/EvleriListele?durum=aktif" style="text-decoration:none">
+            <div class="card bg-success text-white mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">Aktif Ev</h5>
+                    <p class="card-text">@ViewBag.AktifEv</p>
+                </div>
+            </div>
+        </a>
+    </div>
+
+    <div class="col-md-3">
+        <a href="/Admin/EvleriListele?durum=pasif" style="text-decoration:none">
+            <div class="card bg-danger text-white mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">Pasif Ev</h5>
+                    <p class="card-text">@ViewBag.PasifEv</p>
+                </div>
+            </div>
+        </a>
+    </div>
+
+</div>
+
+<a href="/Admin/Odemeler" class="text-decoration-none text-dark">
+    <div class="card bg-success text-white mb-3">
+        <div class="card-body">
+            <h5 class="card-title">Toplam Ödeme Tutarı</h5>
+            <p class="card-text">@ViewBag.ToplamOdeme ₺</p>
+        </div>
+    </div>
+</a>
+<a href="/Admin/Rezervasyonlar" class="text-decoration-none text-dark">
+    <div class="card bg-info text-white mb-3">
+        <div class="card-body">
+            <h5 class="card-title">Toplam Rezervasyon</h5>
+            <p class="card-text">@ViewBag.ToplamRezervasyon</p>
+        </div>
+    </div>
+</a>
+<a href="/Admin/KullanicilariListele" class="text-decoration-none text-dark">
+    <div class="card bg-primary text-white mb-3">
+        <div class="card-body">
+            <h5 class="card-title">Toplam Kullanıcı</h5>
+            <p class="card-text">@ViewBag.Toplam</p>
+        </div>
+    </div>
+</a>

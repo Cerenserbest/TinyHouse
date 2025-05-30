@@ -1,0 +1,47 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+{
+@model TinyHouseReservations.Models.Rezervasyon
+
+{
+    ViewData["Title"] = "Rezervasyon Ekle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Yeni Rezervasyon Ekle</h2>
+
+<form asp-action="RezervasyonEkle" method="post">
+    <div class="form-group">
+        <label>Kullanıcı</label>
+        <select asp-for="KullaniciID" class="form-control" asp-items="ViewBag.Kullanicilar"></select>
+    </div>
+    <div class="form-group">
+        <label>Ev</label>
+        <select asp-for="EvID" class="form-control" asp-items="ViewBag.Evler"></select>
+    </div>
+    <div class="form-group">
+        <label>Başlangıç Tarihi</label>
+        <input asp-for="BaslangicTarihi" class="form-control" type="date" />
+    </div>
+    <div class="form-group">
+        <label>Bitiş Tarihi</label>
+        <input asp-for="BitisTarihi" class="form-control" type="date" />
+    </div>
+    <div class="form-group">
+        <label>Ödeme Durumu</label>
+        <select asp-for="OdemeDurumu" class="form-control">
+            <option value="true">Ödendi</option>
+            <option value="false">Bekleniyor</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label>Durum</label>
+        <select asp-for="Durum" class="form-control">
+            <option value="true">Aktif</option>
+            <option value="false">İptal</option>
+        </select>
+    </div>
+    <button type="submit" class="btn btn-success">Kaydet</button>
+</form>
+
